@@ -20,11 +20,11 @@ public class Solution {
         int front = 0; 
         int end = s.length() -1;
         while (front < end ) {
-            while(front < end && isValid(s,front)){
+            while(front < end && isNotValid(s,front)){
                 front++; 
             }
        
-            while(front < end  && isValid(s, end)){
+            while(front < end  && isNotValid(s, end)){
                 end --;
             }
             if(front < end && s.charAt(front)!=s.charAt(end)){
@@ -35,7 +35,7 @@ public class Solution {
         }
         	return true;
     }
-    private boolean isValid(String s, int num){
+    private boolean isNotValid(String s, int num){
         if ((s.charAt(num) <'0' || s.charAt(num) >'9') && 
         ((s.charAt(num)<'a' || s.charAt(num) >'z'))){
             return true;
